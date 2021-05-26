@@ -31,5 +31,17 @@ namespace App.Services
             _db.Add(teacher);
             _db.SaveChanges();
         }
+
+        public void UpdateTeacher(TeachersInfo teacher)
+        {
+            _db.Update(teacher);
+            _db.SaveChanges();
+        }
+
+        public void DeleteTeacher(TeachersInfo teacher) 
+        {
+            _db.Remove(teacher);
+            _db.SaveChanges();
+        }
     }
 }
