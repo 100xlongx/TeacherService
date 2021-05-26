@@ -31,6 +31,9 @@ namespace App
             services.AddScoped<StudentService>();
             services.AddTransient<TeacherServices>();
             services.AddTransient<DepartmentService>();
+            services.AddTransient<ScheduleService>();
+            services.AddTransient<ClassService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
