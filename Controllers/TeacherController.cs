@@ -47,5 +47,12 @@ namespace App.Controllers
             _teacherService.AddTeacher(Teacher);
             return base.Accepted("Teacher Added");
         }
+
+        [HttpPut]
+        public IActionResult UpdateTeacher([FromBody] TeachersInfo Teacher)
+        {
+            _teacherService.UpdateTeacher(Teacher);
+            return base.Accepted("Teacher Updated");
+        }
     }
 }

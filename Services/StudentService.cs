@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.Extensions.Logging;
 using App.Models;
 using App.Data;
 
@@ -8,11 +7,9 @@ namespace App.Services
 {
     public class StudentService 
     {
-        private readonly ILogger<StudentService> _logger;
         private readonly DataContext _db;
-        public StudentService(ILogger<StudentService> logger, DataContext db)
+        public StudentService(DataContext db)
         {
-            _logger = logger;
             _db = db;
         }
 

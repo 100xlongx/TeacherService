@@ -9,5 +9,6 @@ namespace App.Models
         public int teaAge { get; set; }
         public string teaDaySubject { get; set; }
         public string teaOptionalLang { get; set; }
+        public string departmentID { get; set; }
     }
 }

@@ -3,14 +3,16 @@ using System;
 using App.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace App.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20210526195104_NewDbSets")]
+    partial class NewDbSets
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -141,8 +143,8 @@ namespace App.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("departmentID")
-                        .HasColumnType("TEXT");
+                    b.Property<long?>("DepartmentInfoId")
+                        .HasColumnType("INTEGER");
 
                     b.Property<int>("teaAge")
                         .HasColumnType("INTEGER");
@@ -163,6 +165,8 @@ namespace App.Migrations
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("DepartmentInfoId");
 
                     b.ToTable("TeachersInfos");
                 });
@@ -193,6 +197,18 @@ namespace App.Migrations
                         .HasForeignKey("studentId");
 
                     b.Navigation("student");
+                });
+
+            modelBuilder.Entity("App.Models.TeachersInfo", b =>
+                {
+                    b.HasOne("App.Models.DepartmentInfo", null)
+                        .WithMany("teachers")
+                        .HasForeignKey("DepartmentInfoId");
+                });
+
+            modelBuilder.Entity("App.Models.DepartmentInfo", b =>
+                {
+                    b.Navigation("teachers");
                 });
 
             modelBuilder.Entity("App.Models.ScheduleInfo", b =>

@@ -5,7 +5,6 @@ namespace App.Data
 {
     public class DataContext : DbContext
     {
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder
@@ -13,8 +12,9 @@ namespace App.Data
         }
         public DbSet<StudentsInfo> StudentsInfo { get; set; }
         public DbSet<TeachersInfo> TeachersInfos { get; set; }
-
         public DbSet<DepartmentInfo> DepartmentInfos { get; set; }
+        public DbSet<ScheduleInfo> scheduleInfos { get; set; } 
+        public DbSet<ClassInfo> classInfos { get; set; }
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

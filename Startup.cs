@@ -30,6 +30,7 @@ namespace App
             services.AddDbContext<DataContext>();
             services.AddScoped<StudentService>();
             services.AddTransient<TeacherService>();
+            services.AddTransient<DepartmentService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
