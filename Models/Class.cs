@@ -5,7 +5,7 @@ namespace App.Models
     public class ClassInfo
     {
         public long Id { get; set; }
-        public TeachersInfo teacher { get; set; }
-        public DepartmentInfo department { get; set; }
+        public int teacherId { get; set; }
+        public int departmentId { get; set; }
     }
 }
