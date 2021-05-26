@@ -6,12 +6,12 @@ using App.Data;
 
 namespace App.Services
 {
-    public class TeacherService
+    public class TeacherServices
     {
         private readonly DataContext _db;
         // private List<TeachersInfo> _teacher = new List<TeachersInfo>();
 
-        public TeacherService(ILogger<TeacherService> logger, DataContext db)
+        public TeacherServices(ILogger<TeacherServices> logger, DataContext db)
         {
             _db = db;
         }

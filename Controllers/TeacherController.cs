@@ -11,9 +11,9 @@ namespace App.Controllers
     public class TeacherController : ControllerBase
     {
         private readonly ILogger<TeacherController> _logger;
-        private readonly TeacherService _teacherService;
+        private readonly TeacherServices _teacherService;
 
-        public TeacherController(ILogger<TeacherController> logger, TeacherService teacherService)
+        public TeacherController(ILogger<TeacherController> logger, TeacherServices teacherService)
         {
             _logger = logger;
             _teacherService = teacherService;

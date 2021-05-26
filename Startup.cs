@@ -29,7 +29,7 @@ namespace App
             });
             services.AddDbContext<DataContext>();
             services.AddScoped<StudentService>();
-            services.AddTransient<TeacherService>();
+            services.AddTransient<TeacherServices>();
             services.AddTransient<DepartmentService>();
         }
 
